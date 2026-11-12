@@ -1,7 +1,7 @@
 #include "httplib.h"
 #include "powerpath.h"
 #include <cstdlib>
-#include <nlohmann/json.hpp>cmake --build .\backend\build --parallel 4
+#include <nlohmann/json.hpp>
 
 using namespace std;
 using json = nlohmann::json;
