@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPath | Smart Hostel Energy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">⚡</div>
+            <div>
+                <h2>PowerPath</h2>
+                <small>Smart Energy System</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#dashboard" class="active">Dashboard</a>
+            <a href="#rooms">Room Management</a>
+            <a href="#allocation">Power Allocation</a>
+            <a href="#network">Hostel Network</a>
+            <a href="#reports">ADS Modules</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            ● Backend:
+            <span id="connection">Checking...</span>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <h1>Hostel Dashboard</h1>
+                <p>Smart Electricity Load Management</p>
+            </div>
+            <div>👤 Hostel Administrator</div>
+        </header>
+
+        <section id="dashboard">
+
+            <div class="welcome">
+                <div>
+                    <h2>Welcome to PowerPath</h2>
+                    <p>Intelligent electricity distribution for your hostel.</p>
+                </div>
+                <div class="status-badge">● SYSTEM ONLINE</div>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <p>Available Power</p>
+                    <h2 id="available">-- W</h2>
+                    <small>Configured capacity</small>
+                </div>
+
+                <div class="stat-card">
+                    <p>Allocated Power</p>
+                    <h2 id="allocated">-- W</h2>
+                    <small>Current allocation</small>
+                </div>
+
+                <div class="stat-card">
+                    <p>Total Rooms</p>
+                    <h2 id="roomsCount">--</h2>
+                    <small>Registered rooms</small>
+                </div>
+
+                <div class="stat-card">
+                    <p>Electrical Loads</p>
+                    <h2 id="loadsCount">--</h2>
+                    <small>Managed loads</small>
+                </div>
+
+            </div>
+
+            <section class="panel" id="allocation">
+
+                <h2>Smart Power Allocation</h2>
+                <p>Run the C++ priority-based allocation engine.</p>
+
+                <div class="allocation-form">
+
+                    <label for="powerInput">
+                        Available Electricity (Watts)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="powerInput"
+                        value="2000"
+                        min="0"
+                        max="1000000"
+                    >
+
+                    <button onclick="runAllocation()">
+                        ⚡ Run Allocation
+                    </button>
+
+                </div>
+
+                <div id="allocationMessage"></div>
+
+                <div class="result-grid">
+
+                    <div class="result-card">
+                        <span>Allocated</span>
+                        <h2 id="resultAllocated">0 W</h2>
+                    </div>
+
+                    <div class="result-card">
+                        <span>Remaining</span>
+                        <h2 id="resultRemaining">0 W</h2>
+                    </div>
+
+                </div>
+
+                <h3>Active Loads</h3>
+                <div id="activeLoads" class="load-list"></div>
+
+                <h3>Waiting Loads</h3>
+                <div id="waitingLoads" class="load-list"></div>
+
+            </section>
+
+            <section class="panel" id="rooms">
+
+                <h2>Room Management</h2>
+                <p>Register hostel rooms.</p>
+
+                <div class="room-form">
+
+                    <input
+                        type="text"
+                        id="roomId"
+                        placeholder="Room ID (e.g. 401)"
+                    >
+
+                    <input
+                        type="number"
+                        id="roomFloor"
+                        placeholder="Floor"
+                        min="1"
+                    >
+
+                    <input
+                        type="number"
+                        id="roomConsumption"
+                        placeholder="Consumption (W)"
+                        min="0"
+                    >
+
+                    <button onclick="addRoom()">Add Room</button>
+
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Room ID</th>
+                                <th>Floor</th>
+                                <th>Consumption</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="roomTable"></tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <section class="panel" id="network">
+
+                <h2>Hostel Electrical Network</h2>
+                <p>Graph traversal using Breadth First Search.</p>
+
+                <button onclick="loadNetwork()">
+                    Run BFS Traversal
+                </button>
+
+                <div id="networkResult" class="network-result">
+                    Network not loaded.
+                </div>
+
+            </section>
+
+            <section class="panel" id="reports">
+
+                <h2>PowerPath ADS Modules</h2>
+
+                <div class="module-grid">
+                    <div>Priority Queue <span>Min Heap</span></div>
+                    <div>Queue <span>Linked List</span></div>
+                    <div>Graph <span>BFS / DFS</span></div>
+                    <div>Tree <span>Hierarchy</span></div>
+                    <div>Hash Map <span>Room Lookup</span></div>
+                    <div>Merge Sort <span>Ranking</span></div>
+                    <div>Greedy <span>Allocation</span></div>
+                    <div>Dynamic Programming <span>Knapsack</span></div>
+                </div>
+
+            </section>
+
+        </section>
+
+        <footer>
+            PowerPath © 2026 | C++ ADS Project
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

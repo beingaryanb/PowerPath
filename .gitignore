@@ -1,0 +1,10 @@
+backend/build/
+cmake-build-*/
+.vs/
+.vscode/
+*.exe
+*.dll
+*.o
+*.obj
+CMakeCache.txt
+CMakeFiles/
