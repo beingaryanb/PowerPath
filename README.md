@@ -61,7 +61,7 @@ PowerPath/
 1. Clone the repository.
 2. Compile the C++ backend using CMake.
 3. Run the generated backend executable.
-4. Open the dashboard at https://powerpath-uxjx.onrender.com?utm_source=chatgpt.com
+4. Open the dashboard at https://powerpath-uxjx.onrender.com
 
 ## 🎯 Project Goal
 
